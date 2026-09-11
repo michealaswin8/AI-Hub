@@ -1,0 +1,2159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Tool Details — AI Vault</title>
+
+    <meta
+        name="description"
+        content="Learn more about AI tools available on AI Vault."
+    >
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- YOUR EXISTING CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+    <!-- DETAILS PAGE CSS -->
+
+    <style>
+
+        /* =============================================
+           DETAILS PAGE
+        ============================================= */
+
+        .details-page {
+            width: min(1180px, calc(100% - 40px));
+
+            margin: 0 auto;
+
+            padding:
+                130px
+                0
+                90px;
+        }
+
+
+        /* BACK BUTTON */
+
+        .details-back {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 30px;
+
+            color: var(--text-secondary, #a9a9b8);
+
+            text-decoration: none;
+
+            font-size: 0.92rem;
+
+            font-weight: 600;
+
+            transition:
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+
+        .details-back:hover {
+            color: var(--text-primary, #ffffff);
+
+            transform:
+                translateX(-4px);
+        }
+
+
+        /* HERO */
+
+        .tool-details-hero {
+            position: relative;
+
+            overflow: hidden;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                auto;
+
+            gap: 40px;
+
+            align-items: center;
+
+            padding: 45px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            border-radius: 28px;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            backdrop-filter:
+                blur(18px);
+
+            margin-bottom: 28px;
+        }
+
+
+        .tool-details-hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+
+            height: 300px;
+
+            border-radius: 50%;
+
+            right: -120px;
+
+            top: -130px;
+
+            background:
+                rgba(126, 87, 255, 0.16);
+
+            filter:
+                blur(20px);
+
+            pointer-events: none;
+        }
+
+
+        .details-main-info {
+            position: relative;
+
+            z-index: 1;
+        }
+
+
+        /* ICON */
+
+        .details-tool-icon {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 72px;
+
+            height: 72px;
+
+            margin-bottom: 22px;
+
+            border-radius: 20px;
+
+            font-size: 30px;
+
+            background:
+                rgba(126,87,255,0.14);
+
+            border:
+                1px solid
+                rgba(150,120,255,0.25);
+        }
+
+
+        /* BADGES */
+
+        .details-badges {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .details-badge {
+            display: inline-flex;
+
+            align-items: center;
+
+            padding:
+                7px
+                11px;
+
+            border-radius: 100px;
+
+            font-size: 0.72rem;
+
+            font-weight: 700;
+
+            letter-spacing: 0.04em;
+
+            background:
+                rgba(126,87,255,0.12);
+
+            border:
+                1px solid
+                rgba(126,87,255,0.25);
+        }
+
+
+        .details-main-info h1 {
+            margin:
+                0
+                0
+                14px;
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size:
+                clamp(
+                    2.3rem,
+                    6vw,
+                    4rem
+                );
+
+            line-height: 1;
+        }
+
+
+        .details-description {
+            max-width: 720px;
+
+            margin: 0;
+
+            line-height: 1.75;
+
+            color:
+                var(--text-secondary, #a9a9b8);
+
+            font-size: 1rem;
+        }
+
+
+        /* HERO RIGHT */
+
+        .details-hero-right {
+            position: relative;
+
+            z-index: 1;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+
+            min-width: 210px;
+        }
+
+
+        .details-visit-button {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            min-height: 52px;
+
+            padding:
+                12px
+                20px;
+
+            border-radius: 14px;
+
+            border: none;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7657ff,
+                    #a35cff
+                );
+
+            color: white;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        .details-visit-button:hover {
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 12px 35px
+                rgba(126,87,255,0.30);
+        }
+
+
+        .details-save-button {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            min-height: 48px;
+
+            padding:
+                12px
+                18px;
+
+            border-radius: 14px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            background:
+                rgba(255,255,255,0.05);
+
+            color: inherit;
+
+            font-weight: 600;
+
+            cursor: pointer;
+        }
+
+
+        /* INFORMATION GRID */
+
+        .details-stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 14px;
+
+            margin-bottom: 28px;
+        }
+
+
+        .details-stat {
+            padding: 20px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,0.035);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+
+        .details-stat span {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-size: 0.78rem;
+
+            color:
+                var(--text-secondary, #9999aa);
+        }
+
+
+        .details-stat strong {
+            font-size: 0.96rem;
+        }
+
+
+        /* CONTENT */
+
+        .details-content-grid {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.5fr)
+                minmax(280px, 0.7fr);
+
+            gap: 22px;
+        }
+
+
+        .details-column {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 22px;
+        }
+
+
+        .details-card {
+            padding: 28px;
+
+            border-radius: 22px;
+
+            background:
+                rgba(255,255,255,0.035);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+
+        .details-card h2 {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin:
+                0
+                0
+                17px;
+
+            font-family:
+                "Space Grotesk",
+                sans-serif;
+
+            font-size: 1.25rem;
+        }
+
+
+        .details-card h2 i {
+            color: #8f72ff;
+        }
+
+
+        .details-card p {
+            margin: 0;
+
+            line-height: 1.75;
+
+            color:
+                var(--text-secondary, #a9a9b8);
+        }
+
+
+        /* USE LIST */
+
+        .best-use-list {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+        }
+
+
+        .best-use-item {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 11px;
+
+            padding: 15px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255,255,255,0.035);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.06);
+        }
+
+
+        .best-use-item i {
+            margin-top: 3px;
+
+            color: #8f72ff;
+        }
+
+
+        .best-use-item span {
+            line-height: 1.5;
+
+            font-size: 0.9rem;
+        }
+
+
+        /* TAGS */
+
+        .details-tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+
+        .details-tag {
+            padding:
+                8px
+                11px;
+
+            border-radius: 9px;
+
+            font-size: 0.78rem;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+
+        /* PROS */
+
+        .detail-list {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+
+            margin: 0;
+
+            padding: 0;
+
+            list-style: none;
+        }
+
+
+        .detail-list li {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 10px;
+
+            line-height: 1.55;
+
+            font-size: 0.9rem;
+
+            color:
+                var(--text-secondary, #a9a9b8);
+        }
+
+
+        .detail-list.pros-list i {
+            color: #53d997;
+        }
+
+
+        .detail-list.cons-list i {
+            color: #f4b860;
+        }
+
+
+        /* NOT FOUND */
+
+        .tool-not-found {
+            text-align: center;
+
+            padding:
+                100px
+                20px;
+        }
+
+
+        .tool-not-found i {
+            font-size: 45px;
+
+            margin-bottom: 20px;
+
+            color: #8f72ff;
+        }
+
+
+        .tool-not-found h1 {
+            margin-bottom: 10px;
+        }
+
+
+        /* LIGHT MODE */
+
+        body.light-mode .tool-details-hero,
+        body.light-mode .details-card,
+        body.light-mode .details-stat {
+            border-color:
+                rgba(0,0,0,0.08);
+
+            background:
+                rgba(255,255,255,0.68);
+        }
+
+
+        body.light-mode .best-use-item,
+        body.light-mode .details-tag,
+        body.light-mode .details-save-button {
+            border-color:
+                rgba(0,0,0,0.08);
+
+            background:
+                rgba(0,0,0,0.035);
+        }
+
+
+        /* TABLET */
+
+        @media (max-width: 900px) {
+
+            .tool-details-hero {
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .details-hero-right {
+                min-width: 0;
+
+                flex-direction: row;
+            }
+
+
+            .details-visit-button,
+            .details-save-button {
+                flex: 1;
+            }
+
+
+            .details-stats {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .details-content-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .details-page {
+                width:
+                    calc(100% - 28px);
+
+                padding:
+                    105px
+                    0
+                    60px;
+            }
+
+
+            .tool-details-hero {
+                padding: 23px;
+
+                border-radius: 22px;
+            }
+
+
+            .details-tool-icon {
+                width: 60px;
+
+                height: 60px;
+
+                font-size: 25px;
+            }
+
+
+            .details-main-info h1 {
+                font-size: 2.3rem;
+            }
+
+
+            .details-description {
+                font-size: 0.92rem;
+            }
+
+
+            .details-hero-right {
+                flex-direction: column;
+            }
+
+
+            .details-stats {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+
+            .details-stat {
+                padding: 16px;
+            }
+
+
+            .details-card {
+                padding: 20px;
+            }
+
+
+            .best-use-list {
+                grid-template-columns:
+                    1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- BACKGROUND -->
+
+    <div class="background-grid"></div>
+
+    <div class="background-glow glow-one"></div>
+
+    <div class="background-glow glow-two"></div>
+
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+
+        <div
+            class="logo"
+            onclick="location.href='index.html'"
+            style="cursor:pointer;"
+        >
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-sparkles"></i>
+
+            </div>
+
+
+            <span>
+
+                AI
+
+                <span class="logo-highlight">
+                    Vault
+                </span>
+
+            </span>
+
+        </div>
+
+
+
+        <nav class="desktop-nav">
+
+            <a
+                href="index.html"
+                class="nav-link"
+            >
+                Home
+            </a>
+
+
+            <a
+                href="explore.html"
+                class="nav-link"
+            >
+                Explore
+            </a>
+
+
+            <a
+                href="index.html#finder"
+                class="nav-link"
+            >
+                AI Finder
+            </a>
+
+
+            <a
+                href="index.html#compare"
+                class="nav-link"
+            >
+                Compare
+            </a>
+
+
+            <a
+                href="index.html#students"
+                class="nav-link"
+            >
+                Students
+            </a>
+
+        </nav>
+
+
+
+        <div class="nav-right">
+
+            <button
+                class="icon-button"
+                id="themeButton"
+                type="button"
+                aria-label="Change theme"
+            >
+
+                <i class="fa-solid fa-sun"></i>
+
+            </button>
+
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Menu"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- MOBILE MENU -->
+
+    <div
+        class="mobile-menu"
+        id="mobileMenu"
+    >
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="explore.html">
+            Explore
+        </a>
+
+        <a href="index.html#finder">
+            AI Finder
+        </a>
+
+        <a href="index.html#compare">
+            Compare
+        </a>
+
+        <a href="index.html#students">
+            Students
+        </a>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOOL DETAILS
+    ====================================================== -->
+
+    <main
+        class="details-page"
+        id="detailsPage"
+    >
+
+        <a
+            href="explore.html"
+            class="details-back"
+        >
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Explore
+
+        </a>
+
+
+
+        <!-- JAVASCRIPT INSERTS DETAILS HERE -->
+
+        <div id="toolDetailsContent">
+
+            <div
+                style="
+                    text-align:center;
+                    padding:80px 20px;
+                "
+            >
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                <p>
+                    Loading AI tool...
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SCRIPT
+    ====================================================== -->
+
+    <!--
+    IMPORTANT:
+    Your existing script.js contains the 234-tool database.
+    -->
+
+    <script src="./script.js?v=11"></script>
+
+
+    <script>
+
+        /* =================================================
+           TOOL DETAILS PAGE
+        ================================================= */
+
+
+        function getSelectedTool() {
+
+            const parameters =
+                new URLSearchParams(
+                    window.location.search
+                );
+
+
+            const id =
+                Number(
+                    parameters.get("id")
+                );
+
+
+            return tools.find(
+                tool =>
+                    tool.id === id
+            );
+
+        }
+
+
+
+        /* =================================================
+           PURPOSE TEXT
+        ================================================= */
+
+
+        function purposeToText(purpose) {
+
+            const names = {
+
+                study:
+                    "Studying & Learning",
+
+                coding:
+                    "Programming & Coding",
+
+                writing:
+                    "Writing & Content",
+
+                research:
+                    "Research & Information",
+
+                business:
+                    "Business & Productivity",
+
+                image:
+                    "Image Creation",
+
+                design:
+                    "Design & Creativity",
+
+                presentation:
+                    "Presentations",
+
+                video:
+                    "Video Creation",
+
+                audio:
+                    "Audio & Voice"
+
+            };
+
+
+            return names[purpose]
+                || capitalize(purpose);
+
+        }
+
+
+
+        /* =================================================
+           WHY USE THIS TOOL
+        ================================================= */
+
+
+        function getWhyUseText(tool) {
+
+            const categoryText = {
+
+                Chat:
+                    `${tool.name} can be useful when you want an AI assistant that can help with questions, ideas, explanations and everyday tasks. It can make it faster to explore information and work through different types of problems.`,
+
+                Coding:
+                    `${tool.name} is designed to help with programming and software development. It can assist developers with writing code, understanding code, finding problems and improving the development workflow.`,
+
+                Image:
+                    `${tool.name} is useful for AI-powered image and design work. It can help turn creative ideas into visual content and can reduce the time needed for some design tasks.`,
+
+                Video:
+                    `${tool.name} focuses on AI-powered video creation or editing. It can help creators produce visual content more quickly and experiment with video ideas without doing every step manually.`,
+
+                Writing:
+                    `${tool.name} can assist with writing, rewriting and improving text. It can be useful when creating content, organizing ideas or improving the clarity of written work.`,
+
+                Audio:
+                    `${tool.name} provides AI-powered tools for audio, voice, speech or music. It can help creators and other users produce or improve audio content more efficiently.`,
+
+                Research:
+                    `${tool.name} is useful for research and learning tasks. It can help users discover, organize or understand information more efficiently.`,
+
+                Productivity:
+                    `${tool.name} is designed to improve productivity and reduce repetitive work. It can help organize tasks, automate parts of a workflow or make everyday digital work more efficient.`
+
+            };
+
+
+            return categoryText[
+                tool.category
+            ]
+            ||
+            tool.description;
+
+        }
+
+
+
+        /* =================================================
+           BEST USES
+        ================================================= */
+
+
+        function getBestUses(tool) {
+
+            const uses =
+                (tool.purposes || [])
+                    .map(
+                        purposeToText
+                    );
+
+
+            /*
+            Add category-specific uses if
+            database doesn't have many.
+            */
+
+            const extraUses = {
+
+                Chat: [
+                    "Ask questions and get explanations",
+                    "Brainstorm ideas",
+                    "Summarize information",
+                    "Everyday AI assistance"
+                ],
+
+                Coding: [
+                    "Generate code",
+                    "Understand programming concepts",
+                    "Debug code",
+                    "Improve developer productivity"
+                ],
+
+                Image: [
+                    "Create AI images",
+                    "Generate creative concepts",
+                    "Design visual content",
+                    "Experiment with different styles"
+                ],
+
+                Video: [
+                    "Create video content",
+                    "Speed up video production",
+                    "Generate creative video ideas",
+                    "Edit or enhance videos"
+                ],
+
+                Writing: [
+                    "Improve writing",
+                    "Generate content ideas",
+                    "Rewrite text",
+                    "Create drafts"
+                ],
+
+                Audio: [
+                    "Create audio content",
+                    "Voice and speech generation",
+                    "Audio enhancement",
+                    "Creative sound projects"
+                ],
+
+                Research: [
+                    "Research topics",
+                    "Understand information",
+                    "Work with documents",
+                    "Support learning"
+                ],
+
+                Productivity: [
+                    "Save time on repetitive tasks",
+                    "Organize work",
+                    "Improve workflows",
+                    "Increase productivity"
+                ]
+
+            };
+
+
+            const combined = [
+
+                ...uses,
+
+                ...(
+                    extraUses[
+                        tool.category
+                    ]
+                    || []
+                )
+
+            ];
+
+
+            return [
+                ...new Set(combined)
+            ]
+            .slice(0, 6);
+
+        }
+
+
+
+        /* =================================================
+           RENDER DETAILS
+        ================================================= */
+
+
+        function renderToolDetailsPage() {
+
+            const container =
+                document.getElementById(
+                    "toolDetailsContent"
+                );
+
+
+            const tool =
+                getSelectedTool();
+
+
+            if (!tool) {
+
+                container.innerHTML = `
+
+                    <div class="tool-not-found">
+
+                        <i
+                            class="
+                                fa-solid
+                                fa-circle-exclamation
+                            "
+                        ></i>
+
+
+                        <h1>
+                            AI Tool Not Found
+                        </h1>
+
+
+                        <p>
+                            The AI tool you requested
+                            could not be found.
+                        </p>
+
+
+                        <br>
+
+
+                        <a
+                            href="explore.html"
+                            class="details-visit-button"
+                            style="
+                                display:inline-flex;
+                            "
+                        >
+
+                            Explore AI Tools
+
+                        </a>
+
+                    </div>
+
+                `;
+
+
+                return;
+
+            }
+
+
+
+            /* PAGE TITLE */
+
+            document.title =
+                `${tool.name} — AI Vault`;
+
+
+
+            const bestUses =
+                getBestUses(tool);
+
+
+
+            /* BADGES */
+
+            let badges = `
+
+                <span class="details-badge">
+
+                    ${tool.category}
+
+                </span>
+
+
+                <span class="details-badge">
+
+                    ${tool.pricing}
+
+                </span>
+
+            `;
+
+
+            if (tool.trending) {
+
+                badges += `
+
+                    <span class="details-badge">
+
+                        🔥 Trending
+
+                    </span>
+
+                `;
+
+            }
+
+
+            if (tool.new) {
+
+                badges += `
+
+                    <span class="details-badge">
+
+                        ✨ New
+
+                    </span>
+
+                `;
+
+            }
+
+
+            if (tool.student) {
+
+                badges += `
+
+                    <span class="details-badge">
+
+                        🎓 Student Friendly
+
+                    </span>
+
+                `;
+
+            }
+
+
+
+            container.innerHTML = `
+
+
+                <!-- =====================================
+                     HERO
+                ====================================== -->
+
+
+                <section
+                    class="
+                        tool-details-hero
+                    "
+                >
+
+
+                    <div
+                        class="
+                            details-main-info
+                        "
+                    >
+
+
+                        <div
+                            class="
+                                details-tool-icon
+                            "
+                        >
+
+                            <i
+                                class="
+                                    ${tool.icon}
+                                "
+                            ></i>
+
+                        </div>
+
+
+
+                        <div
+                            class="
+                                details-badges
+                            "
+                        >
+
+                            ${badges}
+
+                        </div>
+
+
+
+                        <h1>
+
+                            ${tool.name}
+
+                        </h1>
+
+
+
+                        <p
+                            class="
+                                details-description
+                            "
+                        >
+
+                            ${tool.description}
+
+                        </p>
+
+
+                    </div>
+
+
+
+                    <div
+                        class="
+                            details-hero-right
+                        "
+                    >
+
+
+                        <a
+
+                            href="${tool.url}"
+
+                            target="_blank"
+
+                            rel="
+                                noopener
+                                noreferrer
+                            "
+
+                            class="
+                                details-visit-button
+                            "
+
+                        >
+
+                            Visit Website
+
+                            <i
+                                class="
+                                    fa-solid
+                                    fa-arrow-up-right-from-square
+                                "
+                            ></i>
+
+                        </a>
+
+
+
+                        <button
+
+                            class="
+                                details-save-button
+                            "
+
+                            id="
+                                detailSaveButton
+                            "
+
+                            onclick="
+                                saveFromDetails(
+                                    ${tool.id}
+                                )
+                            "
+
+                        >
+
+                            <i
+                                class="
+                                    fa-regular
+                                    fa-bookmark
+                                "
+                            ></i>
+
+                            Save Tool
+
+                        </button>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- =====================================
+                     QUICK INFORMATION
+                ====================================== -->
+
+
+                <section
+                    class="
+                        details-stats
+                    "
+                >
+
+
+                    <div
+                        class="
+                            details-stat
+                        "
+                    >
+
+                        <span>
+                            Category
+                        </span>
+
+                        <strong>
+                            ${tool.category}
+                        </strong>
+
+                    </div>
+
+
+
+                    <div
+                        class="
+                            details-stat
+                        "
+                    >
+
+                        <span>
+                            Pricing
+                        </span>
+
+                        <strong>
+                            ${tool.pricing}
+                        </strong>
+
+                    </div>
+
+
+
+                    <div
+                        class="
+                            details-stat
+                        "
+                    >
+
+                        <span>
+                            Rating
+                        </span>
+
+                        <strong>
+
+                            ⭐ ${tool.rating}
+
+                        </strong>
+
+                    </div>
+
+
+
+                    <div
+                        class="
+                            details-stat
+                        "
+                    >
+
+                        <span>
+                            Experience
+                        </span>
+
+                        <strong>
+
+                            ${capitalize(tool.level)}
+
+                        </strong>
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- =====================================
+                     CONTENT
+                ====================================== -->
+
+
+                <div
+                    class="
+                        details-content-grid
+                    "
+                >
+
+
+                    <!-- LEFT -->
+
+                    <div
+                        class="
+                            details-column
+                        "
+                    >
+
+
+                        <!-- WHAT IS IT -->
+
+                        <section
+                            class="
+                                details-card
+                            "
+                        >
+
+                            <h2>
+
+                                <i
+                                    class="
+                                        fa-solid
+                                        fa-circle-info
+                                    "
+                                ></i>
+
+                                What is ${tool.name}?
+
+                            </h2>
+
+
+                            <p>
+
+                                ${tool.description}
+
+                                ${tool.name}
+                                belongs to the
+                                <strong>
+                                    ${tool.category}
+                                </strong>
+                                category in AI Vault.
+
+                                It is designed to help
+                                users take advantage of
+                                artificial intelligence
+                                for relevant tasks more
+                                efficiently.
+
+                            </p>
+
+                        </section>
+
+
+
+                        <!-- WHY USE -->
+
+                        <section
+                            class="
+                                details-card
+                            "
+                        >
+
+                            <h2>
+
+                                <i
+                                    class="
+                                        fa-solid
+                                        fa-lightbulb
+                                    "
+                                ></i>
+
+                                Why use ${tool.name}?
+
+                            </h2>
+
+
+                            <p>
+
+                                ${getWhyUseText(tool)}
+
+                            </p>
+
+                        </section>
+
+
+
+                        <!-- BEST USES -->
+
+                        <section
+                            class="
+                                details-card
+                            "
+                        >
+
+                            <h2>
+
+                                <i
+                                    class="
+                                        fa-solid
+                                        fa-bullseye
+                                    "
+                                ></i>
+
+                                Best Uses
+
+                            </h2>
+
+
+                            <div
+                                class="
+                                    best-use-list
+                                "
+                            >
+
+                                ${
+                                    bestUses
+                                        .map(
+                                            use => `
+
+                                                <div
+                                                    class="
+                                                        best-use-item
+                                                    "
+                                                >
+
+                                                    <i
+                                                        class="
+                                                            fa-solid
+                                                            fa-circle-check
+                                                        "
+                                                    ></i>
+
+                                                    <span>
+
+                                                        ${use}
+
+                                                    </span>
+
+                                                </div>
+
+                                            `
+                                        )
+                                        .join("")
+                                }
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- WHO SHOULD USE -->
+
+                        <section
+                            class="
+                                details-card
+                            "
+                        >
+
+                            <h2>
+
+                                <i
+                                    class="
+                                        fa-solid
+                                        fa-users
+                                    "
+                                ></i>
+
+                                Who is it best for?
+
+                            </h2>
+
+
+                            <p>
+
+                                ${tool.name}
+                                can be useful for
+
+                                ${
+                                    tool.student
+                                        ? "students, learners, "
+                                        : ""
+                                }
+
+                                ${
+                                    tool.level === "beginner"
+                                        ? "beginners and "
+                                        : ""
+                                }
+
+                                users looking for
+                                ${tool.category.toLowerCase()}
+                                AI capabilities.
+
+                                The best choice still
+                                depends on your exact
+                                task, budget and the
+                                features you need.
+
+                            </p>
+
+                        </section>
+
+
+                    </div>
+
+
+
+                    <!-- RIGHT -->
+
+                    <aside
+                        class="
+                            details-column
+                        "
+                    >
+
+
+                        <!-- TAGS -->
+
+                        <section
+                            class="
+                                details-card
+                            "
+                        >
+
+                            <h2>
+
+                                <i
+                                    class="
+                                        fa-solid
+                                        fa-tags
+                                    "
+                                ></i>
+
+                                Features & Tags
+
+                            </h2>
+
+
+                            <div
+                                class="
+                                    details-tags
+                                "
+                            >
+
+                                ${
+                                    (tool.tags || [])
+                                        .slice(0, 10)
+                                        .map(
+                                            tag => `
+
+                                                <span
+                                                    class="
+                                                        details-tag
+                                                    "
+                                                >
+
+                                                    ${tag}
+
+                                                </span>
+
+                                            `
+                                        )
+                                        .join("")
+                                }
+
+                            </div>
+
+                        </section>
+
+
+
+                        <!-- ADVANTAGES -->
+
+                        <section
+                            class="
+                                details-card
+                            "
+                        >
+
+                            <h2>
+
+                                <i
+                                    class="
+                                        fa-solid
+                                        fa-thumbs-up
+                                    "
+                                ></i>
+
+                                Advantages
+
+                            </h2>
+
+
+                            <ul
+                                class="
+                                    detail-list
+                                    pros-list
+                                "
+                            >
+
+                                ${
+                                    (tool.pros || [])
+                                        .map(
+                                            item => `
+
+                                                <li>
+
+                                                    <i
+                                                        class="
+                                                            fa-solid
+                                                            fa-circle-check
+                                                        "
+                                                    ></i>
+
+                                                    ${item}
+
+                                                </li>
+
+                                            `
+                                        )
+                                        .join("")
+                                }
+
+                            </ul>
+
+                        </section>
+
+
+
+                        <!-- THINGS TO KNOW -->
+
+                        <section
+                            class="
+                                details-card
+                            "
+                        >
+
+                            <h2>
+
+                                <i
+                                    class="
+                                        fa-solid
+                                        fa-triangle-exclamation
+                                    "
+                                ></i>
+
+                                Things to Know
+
+                            </h2>
+
+
+                            <ul
+                                class="
+                                    detail-list
+                                    cons-list
+                                "
+                            >
+
+                                ${
+                                    (tool.cons || [])
+                                        .map(
+                                            item => `
+
+                                                <li>
+
+                                                    <i
+                                                        class="
+                                                            fa-solid
+                                                            fa-circle-info
+                                                        "
+                                                    ></i>
+
+                                                    ${item}
+
+                                                </li>
+
+                                            `
+                                        )
+                                        .join("")
+                                }
+
+                            </ul>
+
+                        </section>
+
+
+
+                        <!-- OFFICIAL WEBSITE -->
+
+                        <section
+                            class="
+                                details-card
+                            "
+                        >
+
+                            <h2>
+
+                                <i
+                                    class="
+                                        fa-solid
+                                        fa-globe
+                                    "
+                                ></i>
+
+                                Official Website
+
+                            </h2>
+
+
+                            <p
+                                style="
+                                    margin-bottom:
+                                        18px;
+                                "
+                            >
+
+                                Visit the official
+                                ${tool.name} website
+                                to check its latest
+                                features and pricing.
+
+                            </p>
+
+
+                            <a
+
+                                href="${tool.url}"
+
+                                target="_blank"
+
+                                rel="
+                                    noopener
+                                    noreferrer
+                                "
+
+                                class="
+                                    details-visit-button
+                                "
+
+                            >
+
+                                Open ${tool.name}
+
+                                <i
+                                    class="
+                                        fa-solid
+                                        fa-arrow-up-right-from-square
+                                    "
+                                ></i>
+
+                            </a>
+
+                        </section>
+
+
+                    </aside>
+
+
+                </div>
+
+            `;
+
+
+            updateDetailSaveButton(
+                tool.id
+            );
+
+        }
+
+
+
+        /* =================================================
+           SAVE TOOL FROM DETAILS PAGE
+        ================================================= */
+
+
+        function saveFromDetails(id) {
+
+            toggleFavorite(id);
+
+
+            updateDetailSaveButton(id);
+
+        }
+
+
+
+        function updateDetailSaveButton(id) {
+
+            const button =
+                document.getElementById(
+                    "detailSaveButton"
+                );
+
+
+            if (!button) {
+                return;
+            }
+
+
+            const saved =
+                favorites.includes(id);
+
+
+            button.innerHTML =
+                saved
+
+                    ? `
+
+                        <i
+                            class="
+                                fa-solid
+                                fa-bookmark
+                            "
+                        ></i>
+
+                        Saved
+
+                    `
+
+                    : `
+
+                        <i
+                            class="
+                                fa-regular
+                                fa-bookmark
+                            "
+                        ></i>
+
+                        Save Tool
+
+                    `;
+
+        }
+
+
+
+        /* =================================================
+           START
+        ================================================= */
+
+
+        renderToolDetailsPage();
+
+
+    </script>
+
+
+</body>
+
+</html>

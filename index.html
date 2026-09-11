@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AI Vault - Discover, compare and find the best AI tools for your needs."
+    >
+
+    <title>AI Vault — Discover The Best AI Tools</title>
+
+    <!-- GOOGLE FONTS -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+<!-- =====================================================
+BACKGROUND
+===================================================== -->
+
+<div class="background-grid"></div>
+
+<div class="background-glow glow-one"></div>
+<div class="background-glow glow-two"></div>
+<div class="background-glow glow-three"></div>
+
+
+<!-- =====================================================
+NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <a
+        href="#home"
+        class="logo"
+    >
+
+        <div class="logo-icon">
+            <i class="fa-solid fa-sparkles"></i>
+        </div>
+
+        <span>
+            AI<span class="logo-highlight">Vault</span>
+        </span>
+
+    </a>
+
+
+    <nav class="desktop-nav">
+
+        <a
+            href="#home"
+            class="nav-link active"
+        >
+            Home
+        </a>
+
+        <a
+            href="#explore"
+            class="nav-link"
+        >
+            Explore
+        </a>
+
+        <a
+            href="#finder"
+            class="nav-link"
+        >
+            AI Finder
+        </a>
+
+        <a
+            href="#compare"
+            class="nav-link"
+        >
+            Compare
+        </a>
+
+        <a
+            href="#students"
+            class="nav-link"
+        >
+            Students
+        </a>
+
+    </nav>
+
+
+    <div class="nav-actions">
+
+        <button
+            class="icon-button"
+            id="themeButton"
+            aria-label="Change Theme"
+        >
+
+            <i class="fa-solid fa-sun"></i>
+
+        </button>
+
+
+        <button
+            class="icon-button saved-nav-button"
+            id="savedNavButton"
+            aria-label="Saved Tools"
+        >
+
+            <i class="fa-regular fa-bookmark"></i>
+
+            <span
+                class="saved-count"
+                id="savedCount"
+            >
+                0
+            </span>
+
+        </button>
+
+
+        <button
+            class="menu-button"
+            id="menuButton"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+MOBILE MENU
+===================================================== -->
+
+<div
+    class="mobile-menu"
+    id="mobileMenu"
+>
+
+    <a href="#home">
+        Home
+    </a>
+
+    <a href="#explore">
+        Explore
+    </a>
+
+    <a href="#finder">
+        AI Finder
+    </a>
+
+    <a href="#compare">
+        Compare
+    </a>
+
+    <a href="#students">
+        Student Hub
+    </a>
+
+    <a href="#favorites">
+        My Tools
+    </a>
+
+</div>
+
+
+<!-- =====================================================
+HERO
+===================================================== -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+
+            <span class="pulse-dot"></span>
+
+            Discover the world of AI
+
+        </div>
+
+
+        <h1>
+
+            Find the perfect
+
+            <span>
+                AI tool
+            </span>
+
+            for anything.
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            Search, compare and discover powerful AI tools for
+            studying, coding, design, writing, video, business
+            and productivity.
+
+        </p>
+
+
+        <!-- SEARCH -->
+
+        <div class="hero-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="mainSearch"
+                placeholder="Search AI tools, features or tasks..."
+                autocomplete="off"
+            >
+
+            <div class="search-shortcut">
+                /
+            </div>
+
+        </div>
+
+
+        <div class="quick-searches">
+
+            <span>
+                Popular:
+            </span>
+
+            <button
+                class="quick-search"
+                data-search="student"
+            >
+                Student
+            </button>
+
+            <button
+                class="quick-search"
+                data-search="coding"
+            >
+                Coding
+            </button>
+
+            <button
+                class="quick-search"
+                data-search="image"
+            >
+                Image
+            </button>
+
+            <button
+                class="quick-search"
+                data-search="research"
+            >
+                Research
+            </button>
+
+            <button
+                class="quick-search"
+                data-search="video"
+            >
+                Video
+            </button>
+
+        </div>
+
+
+        <div class="hero-actions">
+
+            <a
+                href="#finder"
+                class="primary-button"
+            >
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Find AI for me
+
+            </a>
+
+            <a
+                href="#explore"
+                class="secondary-button"
+            >
+
+                Explore tools
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- HERO STATS -->
+
+    <div class="hero-stats">
+
+        <div class="stat">
+
+            <strong id="toolCount">
+                20+
+            </strong>
+
+            <span>
+                AI Tools
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                10+
+            </strong>
+
+            <span>
+                Categories
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                Free
+            </strong>
+
+            <span>
+                Discovery
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                24/7
+            </strong>
+
+            <span>
+                Available
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+TOOL OF THE DAY
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                ✨ TOOL OF THE DAY
+            </span>
+
+            <h2>
+                Today's AI pick
+            </h2>
+
+            <p>
+                Discover one useful AI tool every day.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="tool-of-day"
+        id="toolOfDay"
+    ></div>
+
+</section>
+
+
+<!-- =====================================================
+TRENDING
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                🔥 TRENDING NOW
+            </span>
+
+            <h2>
+                Popular AI tools
+            </h2>
+
+            <p>
+                Some of the most useful tools in AI Vault.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="trending-grid"
+        id="trendingGrid"
+    ></div>
+
+</section>
+
+
+<!-- =====================================================
+AI FINDER
+===================================================== -->
+
+<section
+    class="section finder-section"
+    id="finder"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                AI RECOMMENDATION
+            </span>
+
+            <h2>
+                Find the right AI for you
+            </h2>
+
+            <p>
+                Tell AI Vault what you need and get recommendations.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="finder-container">
+
+        <div class="finder-form">
+
+            <div class="form-group">
+
+                <label>
+                    What do you want to do?
+                </label>
+
+                <select id="finderPurpose">
+
+                    <option value="">
+                        Select your goal
+                    </option>
+
+                    <option value="study">
+                        Study & Learning
+                    </option>
+
+                    <option value="coding">
+                        Coding & Programming
+                    </option>
+
+                    <option value="writing">
+                        Writing & Content
+                    </option>
+
+                    <option value="image">
+                        Create Images
+                    </option>
+
+                    <option value="video">
+                        Create Videos
+                    </option>
+
+                    <option value="research">
+                        Research
+                    </option>
+
+                    <option value="design">
+                        Design
+                    </option>
+
+                    <option value="audio">
+                        Audio & Voice
+                    </option>
+
+                    <option value="presentation">
+                        Presentations
+                    </option>
+
+                    <option value="business">
+                        Business
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Budget
+                </label>
+
+               <select id="finderBudget">
+
+    <option value="all">
+        Any budget
+    </option>
+
+    <option value="freemium">
+        Freemium
+    </option>
+
+    <option value="paid">
+        Paid
+    </option>
+
+</select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Experience level
+                </label>
+
+                <select id="finderLevel">
+
+                    <option value="beginner">
+                        Beginner
+                    </option>
+
+                    <option value="intermediate">
+                        Intermediate
+                    </option>
+
+                    <option value="advanced">
+                        Advanced
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                class="primary-button finder-button"
+                id="findToolsButton"
+            >
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Recommend tools
+
+            </button>
+
+        </div>
+
+
+        <div class="finder-results">
+
+            <div
+                class="finder-empty"
+                id="finderEmpty"
+            >
+
+                <i class="fa-solid fa-robot"></i>
+
+                <h3>
+                    Your recommendations will appear here
+                </h3>
+
+                <p>
+                    Choose what you want to do and let AI Vault
+                    find suitable tools.
+                </p>
+
+            </div>
+
+
+            <div
+                class="recommendation-list"
+                id="recommendationList"
+            ></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+CATEGORIES
+===================================================== -->
+
+<section
+    class="section"
+    id="categories"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                CATEGORIES
+            </span>
+
+            <h2>
+                What do you want to create?
+            </h2>
+
+            <p>
+                Browse AI tools by category.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="category-grid"
+        id="categoryGrid"
+    >
+
+        <button
+            class="category-card purple"
+            data-category="Chat"
+        >
+
+            <div class="category-icon">
+
+                <i class="fa-solid fa-comments"></i>
+
+            </div>
+
+            <h3>
+                AI Chat
+            </h3>
+
+            <p>
+                Assistants and conversational AI.
+            </p>
+
+        </button>
+
+
+        <button
+            class="category-card pink"
+            data-category="Image"
+        >
+
+            <div class="category-icon">
+
+                <i class="fa-solid fa-image"></i>
+
+            </div>
+
+            <h3>
+                Image AI
+            </h3>
+
+            <p>
+                Generate and edit images.
+            </p>
+
+        </button>
+
+
+        <button
+            class="category-card blue"
+            data-category="Video"
+        >
+
+            <div class="category-icon">
+
+                <i class="fa-solid fa-video"></i>
+
+            </div>
+
+            <h3>
+                Video AI
+            </h3>
+
+            <p>
+                Video generation and editing.
+            </p>
+
+        </button>
+
+
+        <button
+            class="category-card green"
+            data-category="Coding"
+        >
+
+            <div class="category-icon">
+
+                <i class="fa-solid fa-code"></i>
+
+            </div>
+
+            <h3>
+                Coding AI
+            </h3>
+
+            <p>
+                Programming and development tools.
+            </p>
+
+        </button>
+
+
+        <button
+            class="category-card orange"
+            data-category="Writing"
+        >
+
+            <div class="category-icon">
+
+                <i class="fa-solid fa-pen-nib"></i>
+
+            </div>
+
+            <h3>
+                Writing
+            </h3>
+
+            <p>
+                Content and writing assistants.
+            </p>
+
+        </button>
+
+
+        <button
+            class="category-card cyan"
+            data-category="Audio"
+        >
+
+            <div class="category-icon">
+
+                <i class="fa-solid fa-microphone"></i>
+
+            </div>
+
+            <h3>
+                Audio AI
+            </h3>
+
+            <p>
+                Voice, audio and music tools.
+            </p>
+
+        </button>
+
+
+        <button
+            class="category-card yellow"
+            data-category="Research"
+        >
+
+            <div class="category-icon">
+
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+            </div>
+
+            <h3>
+                Research
+            </h3>
+
+            <p>
+                Search and research assistants.
+            </p>
+
+        </button>
+
+
+        <button
+            class="category-card red"
+            data-category="Productivity"
+        >
+
+            <div class="category-icon">
+
+                <i class="fa-solid fa-bolt"></i>
+
+            </div>
+
+            <h3>
+                Productivity
+            </h3>
+
+            <p>
+                Work smarter and save time.
+            </p>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+EXPLORE
+===================================================== -->
+
+<section
+    class="section"
+    id="explore"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                DISCOVER
+            </span>
+
+            <h2>
+                Explore AI tools
+            </h2>
+
+            <p>
+                Search and filter the AI Vault collection.
+            </p>
+
+        </div>
+
+        <span
+            class="results-count"
+            id="resultsCount"
+        >
+            0 tools
+        </span>
+
+    </div>
+
+
+    <!-- FILTERS -->
+
+    <div class="advanced-filters">
+
+        <div
+            class="filter-scroll"
+            id="categoryFilters"
+        >
+
+            <button
+                class="filter active"
+                data-category="All"
+            >
+                All
+            </button>
+
+            <button
+                class="filter"
+                data-category="Chat"
+            >
+                Chat
+            </button>
+
+            <button
+                class="filter"
+                data-category="Coding"
+            >
+                Coding
+            </button>
+
+            <button
+                class="filter"
+                data-category="Image"
+            >
+                Image
+            </button>
+
+            <button
+                class="filter"
+                data-category="Video"
+            >
+                Video
+            </button>
+
+            <button
+                class="filter"
+                data-category="Writing"
+            >
+                Writing
+            </button>
+
+            <button
+                class="filter"
+                data-category="Audio"
+            >
+                Audio
+            </button>
+
+            <button
+                class="filter"
+                data-category="Research"
+            >
+                Research
+            </button>
+
+            <button
+                class="filter"
+                data-category="Productivity"
+            >
+                Productivity
+            </button>
+
+        </div>
+
+
+        <div class="filter-selects">
+
+            <select id="pricingFilter">
+
+                <option value="All">
+                    All Pricing
+                </option>
+
+                <option value="Free">
+                    Free
+                </option>
+
+                <option value="Freemium">
+                    Freemium
+                </option>
+
+                <option value="Paid">
+                    Paid
+                </option>
+
+            </select>
+
+
+            <select id="sortFilter">
+
+                <option value="recommended">
+                    Recommended
+                </option>
+
+                <option value="rating">
+                    Highest Rating
+                </option>
+
+                <option value="name">
+                    A - Z
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="tool-grid"
+        id="toolGrid"
+    ></div>
+
+
+    <div
+        class="no-results"
+        id="noResults"
+    >
+
+        <div class="no-results-icon">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+        </div>
+
+        <h3>
+            No AI tools found
+        </h3>
+
+        <p>
+            Try another search or filter.
+        </p>
+
+        <button
+            class="secondary-button"
+            id="resetFilters"
+        >
+            Reset filters
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+COMPARE
+===================================================== -->
+
+<section
+    class="section compare-section"
+    id="compare"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                COMPARE
+            </span>
+
+            <h2>
+                Compare AI tools
+            </h2>
+
+            <p>
+                Compare features, pricing and ratings side by side.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="compare-selectors">
+
+        <select id="compareToolOne"></select>
+
+        <div class="vs-circle">
+            VS
+        </div>
+
+        <select id="compareToolTwo"></select>
+
+        <button
+            class="primary-button"
+            id="compareButton"
+        >
+            Compare
+        </button>
+
+    </div>
+
+
+    <div
+        class="comparison-container"
+        id="comparisonContainer"
+    ></div>
+
+</section>
+
+
+<!-- =====================================================
+STUDENT HUB
+===================================================== -->
+
+<section
+    class="section student-section"
+    id="students"
+>
+
+    <div class="student-banner">
+
+        <div class="student-banner-content">
+
+            <span class="section-label">
+                🎓 STUDENT HUB
+            </span>
+
+            <h2>
+                Study smarter with AI
+            </h2>
+
+            <p>
+
+                Discover useful AI tools for learning,
+                assignments, coding, research and presentations.
+
+            </p>
+
+            <button
+                class="primary-button"
+                id="studentToolsButton"
+            >
+
+                Explore student tools
+
+            </button>
+
+        </div>
+
+
+        <div class="student-visual">
+
+            <div class="floating-card card-one">
+                <i class="fa-solid fa-code"></i>
+                Coding
+            </div>
+
+            <div class="floating-card card-two">
+                <i class="fa-solid fa-book"></i>
+                Study
+            </div>
+
+            <div class="floating-card card-three">
+                <i class="fa-solid fa-chart-simple"></i>
+                Research
+            </div>
+
+            <div class="student-circle">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="student-grid">
+
+        <div class="student-feature">
+
+            <div class="student-feature-icon">
+
+                <i class="fa-solid fa-book-open"></i>
+
+            </div>
+
+            <h3>
+                Study
+            </h3>
+
+            <p>
+                Explain difficult concepts and summarize notes.
+            </p>
+
+        </div>
+
+
+        <div class="student-feature">
+
+            <div class="student-feature-icon">
+
+                <i class="fa-solid fa-laptop-code"></i>
+
+            </div>
+
+            <h3>
+                Coding
+            </h3>
+
+            <p>
+                Learn programming and understand code.
+            </p>
+
+        </div>
+
+
+        <div class="student-feature">
+
+            <div class="student-feature-icon">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </div>
+
+            <h3>
+                Research
+            </h3>
+
+            <p>
+                Find information and research topics faster.
+            </p>
+
+        </div>
+
+
+        <div class="student-feature">
+
+            <div class="student-feature-icon">
+
+                <i class="fa-solid fa-display"></i>
+
+            </div>
+
+            <h3>
+                Presentations
+            </h3>
+
+            <p>
+                Create slides and visual presentations quickly.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+FAVORITES
+===================================================== -->
+
+<section
+    class="section favorites-section"
+    id="favorites"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                MY COLLECTION
+            </span>
+
+            <h2>
+                Saved AI tools
+            </h2>
+
+            <p>
+                Your bookmarked AI tools are stored on this device.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="tool-grid"
+        id="favoritesGrid"
+    ></div>
+
+
+    <div
+        class="favorites-empty"
+        id="favoritesEmpty"
+    >
+
+        <i class="fa-regular fa-bookmark"></i>
+
+        <h3>
+            No saved tools yet
+        </h3>
+
+        <p>
+            Click the bookmark icon on any AI tool.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+NEW TOOLS
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                🆕 RECENTLY ADDED
+            </span>
+
+            <h2>
+                New AI tools
+            </h2>
+
+            <p>
+                Explore recently added tools in AI Vault.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="new-tools-grid"
+        id="newToolsGrid"
+    ></div>
+
+</section>
+
+
+<!-- =====================================================
+CTA
+===================================================== -->
+
+<section class="cta-section">
+
+    <div class="cta-glow"></div>
+
+    <div class="cta-content">
+
+        <span class="section-label">
+            DISCOVER. COMPARE. CREATE.
+        </span>
+
+        <h2>
+            Your next idea might already have an AI tool.
+        </h2>
+
+        <p>
+            Find the right AI for your next project,
+            assignment or creative idea.
+        </p>
+
+        <a
+            href="#finder"
+            class="primary-button"
+        >
+
+            Find my AI tool
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-sparkles"></i>
+
+                </div>
+
+                <span>
+                    AI<span class="logo-highlight">Vault</span>
+                </span>
+
+            </div>
+
+            <p>
+
+                Discover powerful AI tools in one
+                beautifully organized place.
+
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Discover
+            </h4>
+
+            <a href="#explore">
+                Explore
+            </a>
+
+            <a href="#finder">
+                AI Finder
+            </a>
+
+            <a href="#compare">
+                Compare
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Resources
+            </h4>
+
+            <a href="#students">
+                Student Hub
+            </a>
+
+            <a href="#favorites">
+                My Tools
+            </a>
+
+            <a href="#categories">
+                Categories
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                AI Vault
+            </h4>
+
+            <a href="#home">
+                About
+            </a>
+
+            <a href="#home">
+                Contact
+            </a>
+
+            <a href="#home">
+                Submit Tool
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 AI Vault. College Project.
+        </span>
+
+        <span>
+            made by micheal .
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+TOOL DETAILS MODAL
+===================================================== -->
+
+<div
+    class="modal-overlay"
+    id="toolModal"
+>
+
+    <div class="modal">
+
+        <button
+            class="modal-close"
+            id="modalClose"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div
+            id="modalContent"
+            class="modal-content"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+TOAST
+===================================================== -->
+
+<div
+    class="toast"
+    id="toast"
+>
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+        Saved
+    </span>
+
+</div>
+
+
+<!-- BACK TO TOP -->
+
+<button
+    class="back-to-top"
+    id="backToTop"
+>
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

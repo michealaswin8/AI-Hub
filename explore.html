@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Explore AI Tools — AI Vault</title>
+
+    <meta
+        name="description"
+        content="Explore all AI tools available in AI Vault."
+    >
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- YOUR EXISTING CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body data-page="explore">
+
+
+    <!-- =====================================================
+    BACKGROUND
+    ====================================================== -->
+
+    <div class="background-grid"></div>
+
+    <div class="background-glow glow-one"></div>
+
+    <div class="background-glow glow-two"></div>
+
+
+
+    <!-- =====================================================
+    NAVBAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+
+        <!-- LOGO -->
+
+        <div
+            class="logo"
+            onclick="window.location.href='index.html'"
+            style="cursor: pointer;"
+        >
+
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-sparkles"></i>
+
+            </div>
+
+
+            <span>
+
+                AI
+
+                <span class="logo-highlight">
+                    Vault
+                </span>
+
+            </span>
+
+        </div>
+
+
+
+        <!-- DESKTOP NAV -->
+
+        <nav class="desktop-nav">
+
+            <a
+                href="index.html"
+                class="nav-link"
+            >
+                Home
+            </a>
+
+
+            <a
+                href="explore.html"
+                class="nav-link active"
+            >
+                Explore
+            </a>
+
+
+            <a
+                href="index.html#finder"
+                class="nav-link"
+            >
+                AI Finder
+            </a>
+
+
+            <a
+                href="index.html#compare"
+                class="nav-link"
+            >
+                Compare
+            </a>
+
+
+            <a
+                href="index.html#students"
+                class="nav-link"
+            >
+                Students
+            </a>
+
+        </nav>
+
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="nav-right">
+
+
+            <!-- THEME -->
+
+            <button
+                class="icon-button"
+                id="themeButton"
+                type="button"
+                aria-label="Change theme"
+            >
+
+                <i class="fa-solid fa-sun"></i>
+
+            </button>
+
+
+
+            <!-- SAVED -->
+
+            <button
+                class="icon-button"
+                id="savedNavButton"
+                type="button"
+                aria-label="Saved tools"
+            >
+
+                <i class="fa-regular fa-bookmark"></i>
+
+                <span id="savedCount">
+                    0
+                </span>
+
+            </button>
+
+
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Open menu"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+        </div>
+
+
+    </header>
+
+
+
+    <!-- =====================================================
+    MOBILE MENU
+    ====================================================== -->
+
+    <div
+        class="mobile-menu"
+        id="mobileMenu"
+    >
+
+        <a href="index.html">
+            Home
+        </a>
+
+
+        <a href="explore.html">
+            Explore
+        </a>
+
+
+        <a href="index.html#finder">
+            AI Finder
+        </a>
+
+
+        <a href="index.html#compare">
+            Compare
+        </a>
+
+
+        <a href="index.html#students">
+            Students
+        </a>
+
+    </div>
+
+
+
+    <!-- =====================================================
+    MAIN
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =====================================================
+        EXPLORE
+        ====================================================== -->
+
+        <section
+            class="section"
+            id="explore"
+            style="padding-top: 140px;"
+        >
+
+
+            <!-- HEADING -->
+
+            <div class="section-heading">
+
+
+                <div>
+
+                    <span class="section-label">
+
+                        ALL IN ONE PLACE
+
+                    </span>
+
+
+                    <h2>
+
+                        Explore All AI Tools
+
+                    </h2>
+
+
+                    <p>
+
+                        Search and explore every AI website
+                        available in AI Vault.
+
+                        <strong id="toolCount">
+                            234+
+                        </strong>
+
+                        tools available.
+
+                    </p>
+
+                </div>
+
+
+
+                <a
+                    href="index.html"
+                    class="view-all"
+                >
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to Home
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- =====================================================
+            SEARCH
+            ====================================================== -->
+
+            <div
+                class="hero-search"
+                style="
+                    max-width: 760px;
+                    margin-bottom: 25px;
+                "
+            >
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+
+                <!--
+                IMPORTANT:
+                ID MUST BE EXACTLY mainSearch
+                -->
+
+                <input
+                    type="text"
+                    id="mainSearch"
+                    placeholder="Search ChatGPT, Grok, DeepSeek, coding, image..."
+                    autocomplete="off"
+                >
+
+
+                <span class="search-shortcut">
+                    /
+                </span>
+
+            </div>
+
+
+
+            <!-- =====================================================
+            CATEGORY FILTERS
+            ====================================================== -->
+
+            <div
+                class="filter-bar"
+                style="margin-bottom: 18px;"
+            >
+
+
+                <button
+                    class="filter active"
+                    data-category="All"
+                    type="button"
+                >
+                    All Tools
+                </button>
+
+
+                <button
+                    class="filter"
+                    data-category="Chat"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-comments"></i>
+
+                    Chat
+
+                </button>
+
+
+                <button
+                    class="filter"
+                    data-category="Coding"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-code"></i>
+
+                    Coding
+
+                </button>
+
+
+                <button
+                    class="filter"
+                    data-category="Image"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-image"></i>
+
+                    Image
+
+                </button>
+
+
+                <button
+                    class="filter"
+                    data-category="Video"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-video"></i>
+
+                    Video
+
+                </button>
+
+
+                <button
+                    class="filter"
+                    data-category="Writing"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-pen-nib"></i>
+
+                    Writing
+
+                </button>
+
+
+                <button
+                    class="filter"
+                    data-category="Audio"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                    Audio
+
+                </button>
+
+
+                <button
+                    class="filter"
+                    data-category="Research"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+                    Research
+
+                </button>
+
+
+                <button
+                    class="filter"
+                    data-category="Productivity"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                    Productivity
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =====================================================
+            PRICING + SORT
+            ====================================================== -->
+
+            <div
+                style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 12px;
+                    align-items: center;
+                    margin-bottom: 28px;
+                "
+            >
+
+
+                <!-- PRICE -->
+
+              <select id="pricingFilter">
+
+    <option value="All">
+        All Pricing
+    </option>
+
+    <option value="Freemium">
+        Freemium
+    </option>
+
+    <option value="Paid">
+        Paid
+    </option>
+
+</select>
+
+
+
+                <!-- SORT -->
+
+                <select
+                    id="sortFilter"
+                    style="min-width: 170px;"
+                >
+
+                    <option value="recommended">
+
+                        Recommended
+
+                    </option>
+
+
+                    <option value="rating">
+
+                        Highest Rated
+
+                    </option>
+
+
+                    <option value="name">
+
+                        Name A-Z
+
+                    </option>
+
+                </select>
+
+
+
+                <!-- RESET -->
+
+                <button
+                    class="secondary-button"
+                    id="resetFilters"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-rotate-left"></i>
+
+                    Reset
+
+                </button>
+
+
+
+                <!-- RESULTS -->
+
+                <span
+                    id="resultsCount"
+                    style="margin-left: auto;"
+                >
+
+                    Loading tools...
+
+                </span>
+
+
+            </div>
+
+
+
+            <!-- =====================================================
+            TOOL GRID
+
+            JAVASCRIPT WILL INSERT ALL AI TOOLS HERE
+            ====================================================== -->
+
+            <div
+                class="tool-grid"
+                id="toolGrid"
+            ></div>
+
+
+
+            <!-- =====================================================
+            NO RESULTS
+            ====================================================== -->
+
+            <div
+                id="noResults"
+                style="
+                    display: none;
+                    text-align: center;
+                    padding: 60px 20px;
+                "
+            >
+
+                <i
+                    class="fa-solid fa-magnifying-glass"
+                    style="
+                        font-size: 32px;
+                        margin-bottom: 15px;
+                    "
+                ></i>
+
+
+                <h3>
+
+                    No AI tools found
+
+                </h3>
+
+
+                <p>
+
+                    Try another search
+                    or reset the filters.
+
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+        SAVED AI TOOLS
+        ====================================================== -->
+
+        <section
+            class="section"
+            id="favorites"
+        >
+
+
+            <div class="section-heading">
+
+
+                <div>
+
+                    <span class="section-label">
+
+                        MY TOOLS
+
+                    </span>
+
+
+                    <h2>
+
+                        Saved AI Tools
+
+                    </h2>
+
+
+                    <p>
+
+                        Your bookmarked AI tools
+                        are saved in this browser.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div
+                class="tool-grid"
+                id="favoritesGrid"
+            ></div>
+
+
+
+            <div
+                id="favoritesEmpty"
+                style="
+                    text-align: center;
+                    padding: 45px 20px;
+                "
+            >
+
+                <i
+                    class="fa-regular fa-bookmark"
+                    style="
+                        font-size: 28px;
+                        margin-bottom: 15px;
+                    "
+                ></i>
+
+
+                <h3>
+
+                    No saved tools yet
+
+                </h3>
+
+
+                <p>
+
+                    Click the bookmark icon
+                    on any AI tool to save it.
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+    TOOL DETAILS MODAL
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="toolModal"
+    >
+
+        <div class="modal">
+
+
+            <button
+                class="modal-close"
+                id="modalClose"
+                type="button"
+                aria-label="Close"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+
+            <div id="modalContent"></div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+    TOAST
+    ====================================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastMessage">
+
+            Saved
+
+        </span>
+
+    </div>
+
+
+
+    <!-- =====================================================
+    BACK TO TOP
+    ====================================================== -->
+
+    <button
+        class="back-to-top"
+        id="backToTop"
+        type="button"
+        aria-label="Back to top"
+    >
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+
+
+    <!-- =====================================================
+    IMPORTANT
+
+    DO NOT PUT SPACES OR NEW LINES INSIDE src="script.js"
+
+    ?v=10 forces Chrome to load the NEW script instead of
+    an older cached script.
+    ====================================================== -->
+
+    <script src="./script.js?v=10"></script>
+
+
+</body>
+
+</html>
