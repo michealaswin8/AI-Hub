@@ -483,12 +483,9 @@ let currentSort =
     "recommended";
 
 
-let favorites =
-    JSON.parse(
-        localStorage.getItem(
-            "aiVaultFavorites"
-        ) || "[]"
-    );
+let favorites = [];
+let favoritesCsrf = "";
+let favoritesReady = false;
 
 
 /* =====================================================
@@ -1247,6 +1244,10 @@ function updateExploreButton(
 SEARCH
 ===================================================== */
 
+/* =====================================================
+SEARCH
+===================================================== */
+
 if (mainSearch) {
 
     mainSearch.addEventListener(
@@ -1258,46 +1259,16 @@ if (mainSearch) {
                     .value
                     .trim();
 
-
-            /*
-            Searching resets category,
-            so ChatGPT is not hidden
-            by a previous category filter.
-            */
-
             if (currentSearch) {
 
                 currentCategory =
                     "All";
 
-
                 resetCategoryButtons();
 
             }
 
-
             renderTools();
-
-
-            if (
-                !isExplorePage
-                &&
-                currentSearch
-                &&
-                toolGrid
-            ) {
-
-                toolGrid.scrollIntoView({
-
-                    behavior:
-                        "smooth",
-
-                    block:
-                        "start"
-
-                });
-
-            }
 
         }
     );
@@ -1317,7 +1288,6 @@ if (mainSearch) {
                     mainSearch
                         .value
                         .trim();
-
 
                 if (value) {
 
@@ -1829,55 +1799,57 @@ function applyIncomingFilters() {
 FAVORITES
 ===================================================== */
 
-function toggleFavorite(id) {
+async function toggleFavorite(id) {
+    if (!favoritesReady) {
+        showToast("Saved tools are still loading.");
+        return;
+    }
 
-    if (
-        favorites.includes(id)
-    ) {
+    const wasSaved = favorites.includes(id);
 
-        favorites =
-            favorites.filter(
-                item =>
-                    item !== id
+    try {
+        const response = await fetch("/api/favorites", {
+            method: wasSaved ? "DELETE" : "POST",
+
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRF-Token": favoritesCsrf
+            },
+
+            credentials: "same-origin",
+
+            body: JSON.stringify({
+                tool_key: String(id)
+            })
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(
+                result.error || "Could not save the tool."
+            );
+        }
+
+        if (wasSaved) {
+            favorites = favorites.filter(
+                savedId => savedId !== id
             );
 
+            showToast("Removed from My Tools.");
+        } else {
+            favorites.push(id);
 
-        showToast(
-            "Removed from saved tools"
-        );
+            showToast("Saved to MySQL!");
+        }
 
+        updateFavorites();
+        renderTools();
+
+    } catch (error) {
+        showToast(error.message);
     }
-
-    else {
-
-        favorites.push(id);
-
-
-        showToast(
-            "Saved to My Tools"
-        );
-
-    }
-
-
-    localStorage.setItem(
-
-        "aiVaultFavorites",
-
-        JSON.stringify(
-            favorites
-        )
-
-    );
-
-
-    updateFavorites();
-
-
-    renderTools();
-
 }
-
 
 /* =====================================================
 UPDATE FAVORITES
@@ -2008,9 +1980,98 @@ const modalContent =
 
 function openToolDetails(id) {
 
-    window.location.href =
-        `tool-details.html?id=${id}`;
+    const tool = tools.find(
+        t => t.id === Number(id)
+    );
 
+    if (!tool) {
+        console.error("Tool not found:", id);
+        return;
+    }
+
+    const modal =
+        document.getElementById("toolModal");
+
+    const modalContent =
+        document.getElementById("modalContent");
+
+    if (!modal || !modalContent) {
+        console.error("Tool details modal is missing.");
+        return;
+    }
+
+    modalContent.innerHTML = `
+        <div class="modal-tool-icon">
+            <i class="${tool.icon}"></i>
+        </div>
+
+        <h2>${tool.name}</h2>
+
+        <p class="modal-description">
+            ${tool.description}
+        </p>
+
+        <div class="modal-info-grid">
+
+            <div class="modal-info">
+                <span>Category</span>
+                <strong>${tool.category}</strong>
+            </div>
+
+            <div class="modal-info">
+                <span>Pricing</span>
+                <strong>${tool.pricing}</strong>
+            </div>
+
+            <div class="modal-info">
+                <span>Rating</span>
+                <strong>⭐ ${tool.rating}</strong>
+            </div>
+
+            <div class="modal-info">
+                <span>Experience</span>
+                <strong>${tool.level}</strong>
+            </div>
+
+        </div>
+
+        <div class="pros-cons">
+
+            <div class="pros">
+                <h4>Advantages</h4>
+
+                <ul>
+                    ${(tool.pros || [])
+                        .map(item => `<li>${item}</li>`)
+                        .join("")}
+                </ul>
+            </div>
+
+            <div class="cons">
+                <h4>Things to know</h4>
+
+                <ul>
+                    ${(tool.cons || [])
+                        .map(item => `<li>${item}</li>`)
+                        .join("")}
+                </ul>
+            </div>
+
+        </div>
+
+        <button
+            class="primary-button"
+            style="width:100%;"
+            onclick="visitTool('${tool.url}')"
+        >
+            Visit ${tool.name}
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </button>
+    `;
+
+    modal.classList.add("show");
+
+    document.body.style.overflow = "hidden";
 }
 
 
@@ -3605,6 +3666,49 @@ function initializeApp() {
 
 
 initializeApp();
+loadFavoritesFromMySQL();
+
+
+    /*
+    If user clicked search on homepage,
+    focus search box on Explore page.
+    */
+
+    if (
+        isExplorePage
+        &&
+        mainSearch
+    ) {
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        if (
+            params.get("focus") ===
+            "search"
+        ) {
+
+            setTimeout(
+                function () {
+
+                    mainSearch.focus();
+
+                    mainSearch.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                },
+                150
+            );
+
+        }
+
+    }
+
 /* =====================================================
    CURSOR GLOW ANIMATION
 ===================================================== */

@@ -978,7 +978,7 @@
     Your existing script.js contains the 234-tool database.
     -->
 
-    <script src="./script.js?v=11"></script>
+    <script src="./script.js?v=20"></script>
 
 
     <script>
@@ -2082,14 +2082,13 @@
         ================================================= */
 
 
-        function saveFromDetails(id) {
+       async function saveFromDetails(id) {
 
-            toggleFavorite(id);
+    await toggleFavorite(id);
 
+    updateDetailSaveButton(id);
 
-            updateDetailSaveButton(id);
-
-        }
+}
 
 
 

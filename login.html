@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sign In | AI Vault</title>
+
+    <link
+        rel="stylesheet"
+        href="/auth.css"
+    >
+
+    <script
+        defer
+        src="/auth.js"
+    ></script>
+
+</head>
+
+
+<body
+    class="av-auth-page"
+    data-auth-page="login"
+>
+
+    <!-- HEADER -->
+
+    <header class="av-auth-header">
+
+        <a
+            href="/login.html"
+            class="av-brand"
+        >
+
+            <span class="av-brand-icon">
+                ✦
+            </span>
+
+            AI<span>Vault</span>
+
+        </a>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="av-auth-layout">
+
+
+        <!-- LEFT CONTENT -->
+
+        <section class="av-intro">
+
+            <span class="av-eyebrow">
+
+                ✦ YOUR AI WORKSPACE
+
+            </span>
+
+
+            <h1>
+
+                Welcome back to
+
+                <span>AI Vault.</span>
+
+            </h1>
+
+
+            <p>
+
+                Discover powerful AI tools,
+                explore new possibilities and
+                save your favorite tools in
+                one place.
+
+            </p>
+
+
+            <div class="av-features">
+
+                <div class="av-feature">
+
+                    <span>✦</span>
+
+                    <div>
+
+                        <strong>
+                            Discover AI tools
+                        </strong>
+
+                        <p>
+                            Explore useful tools for
+                            studying, coding and creativity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="av-feature">
+
+                    <span>♡</span>
+
+                    <div>
+
+                        <strong>
+                            Your AI workspace
+                        </strong>
+
+                        <p>
+                            Access AI Vault using your
+                            personal account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOGIN FORM -->
+
+        <section class="av-auth-card">
+
+            <div class="av-card-heading">
+
+                <h2>
+                    Sign in
+                </h2>
+
+                <p>
+
+                    Don't have an account?
+
+                    <a href="/signup.html">
+                        Create one
+                    </a>
+
+                </p>
+
+            </div>
+
+
+            <form id="authForm">
+
+
+                <!-- EMAIL -->
+
+                <label for="email">
+
+                    Email address
+
+                </label>
+
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <!-- PASSWORD -->
+
+                <label for="password">
+
+                    Password
+
+                </label>
+
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    autocomplete="current-password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+
+                <!-- ERROR MESSAGE -->
+
+                <p
+                    id="authError"
+                    class="av-error"
+                    role="alert"
+                ></p>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    id="authSubmit"
+                    class="av-submit"
+                    type="submit"
+                >
+
+                    Sign In →
+
+                </button>
+
+            </form>
+
+
+            <p class="av-bottom-text">
+
+                New to AI Vault?
+
+                <a href="/signup.html">
+                    Sign up
+                </a>
+
+            </p>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
